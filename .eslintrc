@@ -1,0 +1,39 @@
+{
+    "settings": {
+        "react": {
+            "pragma": "React",
+            "version": "detect"
+        }
+    },
+    "extends": ["react-app", "prettier/prettier", "prettier"],
+    "plugins": ["prettier", "eslint-plugin-import", "simple-import-sort"],
+    "globals": {
+        "__DEBUG__": true,
+        "__WEBPACK__": true,
+        "__VERSION__": true,
+        "__BRANCH__": true
+    },
+    "rules": {
+        "prettier/prettier": ["error"],
+        "simple-import-sort/imports": [
+            "error",
+            {
+                "groups": [
+                    // Packages `react` related packages come first.
+                    ["^react", "^@?\\w"],
+                    // Internal packages.
+                    ["^(@|components)(/.*|$)"],
+                    // Side effect imports.
+                    ["^\\u0000"],
+                    // Parent imports. Put `..` last.
+                    ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+                    // Other relative imports. Put same-folder imports and `.` last.
+                    ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+                    // Style imports.
+                    ["^.+\\.?(css)$"]
+                ]
+            }
+        ],
+        "no-throw-literal": "off"
+    }
+}

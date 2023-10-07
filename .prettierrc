@@ -1,0 +1,9 @@
+{
+  "endOfLine": "auto",
+  "tabWidth": 2,
+  "singleQuote": true,
+  "printWidth": 140,
+  "importOrder": ["^react", "^@?\\w", "^\\.\\.(?!/?$)", "^\\.(?!/?$)(?!.*\\.scss$)", "^.+\\.?(css)$"],
+  "importOrderSeparation": true,
+  "jsxSingleQuote": false
+}
